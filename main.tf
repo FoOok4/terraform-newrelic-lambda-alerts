@@ -1,9 +1,9 @@
 resource "newrelic_nrql_alert_condition" "error_rate_min" {
-  name           = "Lambda error rate during ${var.error_duration_critical}min"
-  enabled        = var.enabled
-  policy_id      = var.policy_id
-  runbook_url    = var.runbook_url
-  value_function = "single_value"
+  name        = "Lambda error rate during ${var.error_duration_critical}min"
+  enabled     = var.enabled
+  policy_id   = var.policy_id
+  runbook_url = var.runbook_url
+
 
   nrql {
     query = <<NRQL
@@ -24,11 +24,11 @@ resource "newrelic_nrql_alert_condition" "error_rate_min" {
 }
 
 resource "newrelic_nrql_alert_condition" "error_rate_percentage" {
-  name           = "Lambda percentage of errors during ${var.error_duration_critical}min"
-  enabled        = var.enabled
-  policy_id      = var.policy_id
-  runbook_url    = var.runbook_url
-  value_function = "single_value"
+  name        = "Lambda percentage of errors during ${var.error_duration_critical}min"
+  enabled     = var.enabled
+  policy_id   = var.policy_id
+  runbook_url = var.runbook_url
+
 
   nrql {
     query = <<NRQL
@@ -49,11 +49,11 @@ resource "newrelic_nrql_alert_condition" "error_rate_percentage" {
 }
 
 resource "newrelic_nrql_alert_condition" "execution_time" {
-  name           = "Lambda execution timeout of ${var.function_timeout}sec almost exceeded"
-  enabled        = var.enabled
-  policy_id      = var.policy_id
-  runbook_url    = var.runbook_url
-  value_function = "single_value"
+  name        = "Lambda execution timeout of ${var.function_timeout}sec almost exceeded"
+  enabled     = var.enabled
+  policy_id   = var.policy_id
+  runbook_url = var.runbook_url
+
 
   nrql {
     query = <<NRQL
