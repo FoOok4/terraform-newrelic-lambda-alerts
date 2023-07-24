@@ -19,7 +19,7 @@ resource "newrelic_nrql_alert_condition" "error_rate_min" {
     operator              = "above"
     threshold             = var.error_threshold_critical
     threshold_duration    = var.error_duration_critical
-    threshold_occurrences = "any"
+    threshold_occurrences = "all"
   }
 }
 
@@ -44,7 +44,7 @@ resource "newrelic_nrql_alert_condition" "error_rate_percentage" {
     operator              = "above"
     threshold             = var.error_threshold_critical
     threshold_duration    = var.error_duration_critical
-    threshold_occurrences = "any"
+    threshold_occurrences = "all"
   }
 }
 
@@ -69,7 +69,7 @@ resource "newrelic_nrql_alert_condition" "execution_time" {
     operator              = "above"
     threshold             = var.function_timeout * 0.95
     threshold_duration    = var.error_duration_critical
-    threshold_occurrences = "any"
+    threshold_occurrences = "all"
   }
 
   warning {
