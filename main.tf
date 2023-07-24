@@ -75,10 +75,11 @@ resource "newrelic_nrql_alert_condition" "execution_time" {
     threshold_occurrences = "all"
   }
 
-  warning {
+  term {
     operator              = "above"
     threshold             = var.function_timeout * 0.8
     threshold_duration    = var.error_duration_critical * 2
+    priority              = "warning"
     threshold_occurrences = "all"
   }
 }
