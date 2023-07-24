@@ -15,10 +15,11 @@ resource "newrelic_nrql_alert_condition" "error_rate_min" {
     evaluation_offset = var.evaluation_offset
   }
 
-  critical {
+  term {
     operator              = "above"
     threshold             = var.error_threshold_critical
-    threshold_duration    = var.error_duration_critical
+    duration              = var.error_duration_critical
+    priority              = "critical"
     threshold_occurrences = "all"
   }
 }
@@ -40,10 +41,11 @@ resource "newrelic_nrql_alert_condition" "error_rate_percentage" {
     evaluation_offset = var.evaluation_offset
   }
 
-  critical {
+  term {
     operator              = "above"
     threshold             = var.error_threshold_critical
-    threshold_duration    = var.error_duration_critical
+    duration              = var.error_duration_critical
+    priority              = "critical"
     threshold_occurrences = "all"
   }
 }
@@ -65,10 +67,11 @@ resource "newrelic_nrql_alert_condition" "execution_time" {
     evaluation_offset = var.evaluation_offset
   }
 
-  critical {
+  term {
     operator              = "above"
     threshold             = var.function_timeout * 0.95
-    threshold_duration    = var.error_duration_critical
+    duration              = var.error_duration_critical
+    priority              = "critical"
     threshold_occurrences = "all"
   }
 
