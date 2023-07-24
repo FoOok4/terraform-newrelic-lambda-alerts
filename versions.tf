@@ -4,5 +4,4 @@ terraform {
       source = "newrelic/newrelic"
     }
   }
-  required_version = "~> 1.5"
 }
