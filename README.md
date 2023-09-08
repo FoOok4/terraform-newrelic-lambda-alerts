@@ -36,7 +36,7 @@ Instead pin to the release tag (e.g. `?ref=tags/x.y.z`) of one of our [latest re
 
 ```hcl
 module "newrelic_alert" {
-  source           = "git::git::https://github.com/FoOok4/terraform-newrelic-lambda-alerts.git?ref=main"
+  source           = "git::git::https://github.com/FoOok4/terraform-newrelic-lambda-alerts.git?ref=master"
   function_name    = aws_lambda_function.main.function_name
   function_arn     = aws_lambda_function.main.arn
   function_timeout = aws_lambda_function.main.timeout
